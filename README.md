@@ -21,3 +21,5 @@ npm run build
 ## Project content
 
 Project descriptions and images are maintained in `src/assets/components/Project.jsx`. Add real project URLs and case-study details there when available. Do not publish placeholder links or unverified outcomes.
+
+//9/12/2026

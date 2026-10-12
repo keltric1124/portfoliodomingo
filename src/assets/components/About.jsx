@@ -1,35 +1,38 @@
 import './about.css';
 
-const About = () => {
-  return (
-    <section id="about" className="about-section">
-      <div className="about-container">
-        
-        <div className="about-text-box">
-          <h2>About Me</h2>
-          <p>
-            Hi! I'm <strong>Yuriz Ronell Domingo</strong>. I'm a developer focused on 
-            creating clean, functional, and user-friendly web applications.
-          </p>
-          <p>
-            I believe that great software is built at the intersection of 
-            rigorous logic and creative design.
-          </p>
-        </div>
+const principles = [
+  { number: '01', title: 'Clarify the problem', text: 'Make the real need visible before deciding what to build.' },
+  { number: '02', title: 'Shape the experience', text: 'Give the idea structure, direction, and a clear path through.' },
+  { number: '03', title: 'Build with care', text: 'Sweat the details that make a product feel coherent and dependable.' },
+];
 
-        <div className="highlight-box">
-          <p>
-            "I’m a web developer with a love for clean design, smooth animations, and intuitive user interfaces."
-          </p>
-          <hr />
-          <p>
-            "I enjoy transforming ideas into interactive digital products that make a difference."
-          </p>
-        </div>
-
+const About = () => (
+  <section id="about" className="about-section">
+    <div className="about-layout section-shell">
+      <div className="about-heading">
+        <p className="section-kicker">How I work</p>
+        <h2 className="display-heading">Strong work starts before the first line of code.</h2>
       </div>
-    </section>
-  );
-};
+      <div className="about-detail">
+        <p className="about-lede">
+          My practice connects product thinking, interface craft, and front-end development.
+          I care about making digital experiences feel clear to use and considered in every detail.
+        </p>
+        <p className="about-supporting">
+          That means asking better questions, staying close to the people using the product, and
+          treating implementation as part of the experience, not the final handoff.
+        </p>
+        <div className="principle-list">
+          {principles.map((item) => (
+            <article className="principle-row" key={item.number}>
+              <span className="principle-number">{item.number}</span>
+              <div><h3>{item.title}</h3><p>{item.text}</p></div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+);
 
 export default About;

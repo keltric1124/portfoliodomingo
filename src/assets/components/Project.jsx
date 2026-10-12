@@ -1,62 +1,67 @@
 import './project.css';
-
 import pixelitesImg from './pixelites.jpg';
 import trashtalkImg from './trashtalk.jpg';
 import notionImg from './notion.jpg';
-const Project = () => {
-  const projectData = [
-    {
-      id: 1,
-      title: "Pixelites",
-      description: "A platform that helps students learn and have fun!",
-      image: pixelitesImg,
-      url: "https://www.figma.com/proto/YOUR_PIXELITES_LINK" 
-    },
-    {
-      id: 2,
-      title: "TrashTalk",
-      description: "An app that helps janitors with their jobs and boosts morale",
-      image: trashtalkImg,
-      url: "https://www.figma.com/proto/YOUR_TRASHTALK_LINK" 
-    },
-    {
-      id: 3,
-      title: "Notion",
-      description: "A website for sorting to do lists!",
-      image: notionImg,
-      url: "https://your-notion-website.com" 
-    }
-  ];
 
-  return (
-    <section id="projects" className="project-section">
-      <div className="project-container">
-        <h2 className="section-title">My Projects</h2>
-        <div className="project-grid">
-          {projectData.map((project) => (
-            <a 
-              key={project.id} 
-              href={project.url} 
-              target="_blank" 
-              rel="noreferrer" 
-              className="project-card-link"
-            >
-              <div className="project-card">
-                <div className="project-image">
-                  <img src={project.image} alt={project.title} />
-                </div>
-                <div className="project-info">
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                  <span className="view-project">View Project →</span>
-                </div>
-              </div>
-            </a>
-          ))}
+const projects = [
+  {
+    number: '01',
+    title: 'Pixelites',
+    category: 'Learning experience',
+    description: 'A student-focused platform designed to make learning feel more engaging and enjoyable.',
+    image: pixelitesImg,
+    alt: 'Pixelites learning platform concept preview',
+    tone: 'project-lime',
+  },
+  {
+    number: '02',
+    title: 'TrashTalk',
+    category: 'Workplace support',
+    description: 'An app concept to support janitors in their day-to-day work and help build team morale.',
+    image: trashtalkImg,
+    alt: 'TrashTalk workplace support app concept preview',
+    tone: 'project-blue',
+  },
+  {
+    number: '03',
+    title: 'Notion',
+    category: 'Personal productivity',
+    description: 'A task-list experience focused on bringing everyday to-dos into a clearer, more manageable flow.',
+    image: notionImg,
+    alt: 'Task management website concept preview',
+    tone: 'project-orange',
+  },
+];
+
+const Project = () => (
+  <section id="projects" className="project-section">
+    <div className="project-container section-shell">
+      <div className="project-heading">
+        <div>
+          <p className="section-kicker">Selected work</p>
+          <h2 className="display-heading">Ideas made tangible.</h2>
         </div>
+        <p className="section-intro">A selection of digital product explorations, each shaped around a practical need and a more thoughtful way to meet it.</p>
       </div>
-    </section>
-  );
-};
+      <div className="project-list">
+        {projects.map((project) => (
+          <article className={`project-row ${project.tone}`} key={project.number}>
+            <div className="project-visual">
+              <img src={project.image} alt={project.alt} loading="lazy" />
+              <span className="project-visual-number">{project.number}</span>
+            </div>
+            <div className="project-copy">
+              <div className="project-meta"><span>{project.number}</span><span>{project.category}</span></div>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <span className="project-rule" />
+              <span className="project-caption">Product exploration &middot; Experience direction</span>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+);
 
 export default Project;

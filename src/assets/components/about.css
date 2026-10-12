@@ -1,63 +1,19 @@
-.about-section {
-  padding: 100px 0;
-  background-color: #FEF3C7; 
-  display: flex;
-  justify-content: center;
-}
+.about-section { padding: 130px 0 140px; background: var(--paper); }
+.about-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(48px, 10vw, 150px); }
+.about-heading .section-kicker { margin-bottom: 24px; }
+.about-heading .display-heading { max-width: 500px; font-size: clamp(2.7rem, 4.8vw, 4.5rem); }
+.about-detail { padding-top: 46px; }
+.about-lede { margin: 0; color: var(--ink); font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.42rem, 2.2vw, 1.9rem); letter-spacing: -.025em; line-height: 1.42; }
+.about-supporting { max-width: 570px; margin: 20px 0 44px; color: var(--ink-soft); font-size: .95rem; line-height: 1.8; }
+.principle-list { border-top: 1px solid var(--line); }
+.principle-row { display: grid; grid-template-columns: 54px 1fr; gap: 12px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+.principle-number { padding-top: 3px; color: #71834f; font-size: .7rem; font-weight: 800; letter-spacing: .08em; }
+.principle-row h3 { margin: 0; font-size: .95rem; font-weight: 750; }
+.principle-row p { margin: 7px 0 0; color: var(--ink-soft); font-size: .83rem; line-height: 1.6; }
 
-.about-container {
-  display: flex;
-  align-items: center;
-  width: 90%;
-  max-width: 1100px;
-  gap: 60px; 
-}
-
-.about-text-box {
-  flex: 1.2;
-}
-
-.about-text-box h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-.about-text-box p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  color: #444;
-  margin-bottom: 15px;
-}
-
-
-.highlight-box {
-  flex: 1;
-  background-color: #A3C654;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 10px 10px 0px #61852d;
-  color: white;
-}
-
-.highlight-box p {
-  font-size: 1.2rem;
-  font-style: italic;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.highlight-box hr {
-  border: none;
-  border-top: 1px solid rgba(255, 255, 255, 0.3);
-  margin: 20px 0;
-}
-
-/* Mobile Responsive */
-@media (max-width: 768px) {
-  .about-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 30px;
-  }
+@media (max-width: 760px) {
+  .about-section { padding: 84px 0 96px; }
+  .about-layout { grid-template-columns: 1fr; gap: 12px; }
+  .about-heading .display-heading { max-width: 640px; }
+  .about-detail { padding-top: 18px; }
 }

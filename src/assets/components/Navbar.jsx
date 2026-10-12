@@ -1,18 +1,24 @@
 import './navbar.css';
 
-const Navbar = () => {
-  return (
-    <nav className="navbar">
-      <div className="nav-logo">My Portfolio</div>
+const links = [
+  { href: '#about', label: 'Approach' },
+  { href: '#projects', label: 'Work' },
+  { href: '#skills', label: 'Toolkit' },
+];
+
+const Navbar = () => (
+  <header className="site-header">
+    <nav className="navbar section-shell" aria-label="Main navigation">
+      <a className="nav-logo" href="#hero" aria-label="Yuriz Ronell Domingo, home">
+        <span className="nav-monogram">Y</span>
+        <span>Yuriz Ronell Domingo<small>Experienced developer &middot; Digital experiences</small></span>
+      </a>
       <ul className="nav-links">
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
+        {links.map((link) => <li key={link.href}><a href={link.href}>{link.label}</a></li>)}
       </ul>
+      <a href="#contact" className="nav-contact">Let's talk <span aria-hidden="true">{'\u2197'}</span></a>
     </nav>
-  );
-};
+  </header>
+);
 
 export default Navbar;
